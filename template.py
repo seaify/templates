@@ -7,7 +7,8 @@ app = Flask(__name__)
 app.debug = True
 
 Template_dict = {
-    '1': 'shadowsocks-client.json'
+    '1': 'shadowsocks-server.json',
+    '2': 'shadowsocks-client.json'
 }
 
 @app.route('/get_hello', methods = ['GET'])
@@ -17,6 +18,7 @@ def get_hello():
 
 @app.route('/get_template', methods = ['POST'])
 def get_template():
+    print request.form
     post_data = {
         'template_id': request.form.get('template_id'),
         'server': request.form.get('server'),
