@@ -7,8 +7,7 @@ app = Flask(__name__)
 app.debug = True
 
 Template_dict = {
-    '1': 'shadowsocks-server.json',
-    '2': 'shadowsocks-client.json'
+    '1': 'shadowsocks-config.json',
 }
 
 @app.route('/get_hello', methods = ['GET'])
